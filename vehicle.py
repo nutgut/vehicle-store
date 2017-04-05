@@ -8,7 +8,7 @@
 
 class Vehicle(object):
     # Method for the main menu
-    def __init__(self, brand, year, model, color, price):
+    def __init__(self, brand='', year='', model='', color='', price=''):
         self._brand = brand
         self._year = year
         self._model = model

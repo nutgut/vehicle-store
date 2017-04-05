@@ -10,7 +10,7 @@ My plan is to change the save settings to a text file at next version.
 
 import menu
 import vehicle
-import users
+# import users
 import adminMenu
 from sys import exit
 
@@ -56,8 +56,8 @@ def list_vehicle(args):
 
 
 def login():
-    logins = menu.MainMenu()
-    admin_logins = Users.Admin()
+    # logins = menu.MainMenu()
+    admin_logins = adminMenu.Admin()
     print 'Enter your password'
     user_input = raw_input('> ')
     admin_logins.get_admin(user_input)
@@ -68,14 +68,14 @@ def login():
 
 
 def admin_menu():
-    admin_logins = users.Admin()
+    admin_logins = adminMenu.Admin()
     admin_logins.get_admin_menu()
     user_input = raw_input('> ')
     if user_input == '1':
         list_vehicle(True)
     elif user_input == '2':
-        vehicles = add_vehicles()
-        print vehicles
+        add_vehicles()
+        # print vehicles
         pass
     else:
         the_end()
@@ -83,7 +83,7 @@ def admin_menu():
 
 # Här ska jag fortsätta
 def add_vehicles():
-    vehicle_list = []
+    # vehicle_list = []
     print 'Enter five values'
     brand = raw_input('Enter brand: ')
     year = raw_input('Enter a year: ')
@@ -91,9 +91,11 @@ def add_vehicles():
     color = raw_input('Enter a color: ')
     price = raw_input('Enter a price: ')
     # print()
-    new_vehicle = vehicle.Vehicle.set_vehicle(brand, year, model, color, price)
-    vehicle_list.append(new_vehicle)
-    return vehicle_list
+    new_vehicle = vehicle.Vehicle()
+    new_vehicle.set_vehicle(brand, year, model, color, price)
+    # new_vehicle = vehicle.Vehicle.set_vehicle(brand, year, model, color, price)
+    # vehicle_list.append(new_vehicle)
+    admin_menu()
 
 
 def the_end():
