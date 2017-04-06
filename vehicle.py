@@ -16,12 +16,10 @@ class Vehicle(object):
         self._price = price
         self._admin = False   # Needed?
 
-    def get_vehicle(self, brand):
+    def get_vehicle(self, arg):
         # if brand in self.__vehicles:
             # print (self.__vehicles[brand])
-        # for brand, value in self.__vehicles.items():
-            # print brand, value
-        pass
+        print ', '.join(arg)
 
     def set_vehicle(self, brand, year, model, color, price):
         self._brand = brand

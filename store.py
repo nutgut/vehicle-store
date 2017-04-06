@@ -83,16 +83,22 @@ def admin_menu():
 
 # Här ska jag fortsätta
 def add_vehicles():
-    # vehicle_list = [] * 5
+    vehicle_list = []
     print 'Enter five values'
     brand = raw_input('Enter brand: ')
     year = raw_input('Enter a year: ')
     model = raw_input('Enter a model: ')
     color = raw_input('Enter a color: ')
     price = raw_input('Enter a price: ')
-    # print()
+    # print brand, year, model
+    # info = ''.join([brand, year, model, color, price])
+    # info = ' '.join(brand + year + model + color + price)
+    info = [brand, year, model, color, price]
+    # print ', '.join(info)
     new_vehicle = vehicle.Vehicle()
+    # print new_vehicle
     new_vehicle.set_vehicle(brand, year, model, color, price)
+    new_vehicle.get_vehicle(info)
     # new_vehicle = vehicle.Vehicle.set_vehicle(brand, year, model, color, price)
     # vehicle_list.append(new_vehicle)
     admin_menu()
