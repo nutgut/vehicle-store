@@ -83,7 +83,7 @@ def admin_menu():
 
 # Här ska jag fortsätta
 def add_vehicles():
-    # vehicle_list = []
+    # vehicle_list = [] * 5
     print 'Enter five values'
     brand = raw_input('Enter brand: ')
     year = raw_input('Enter a year: ')
